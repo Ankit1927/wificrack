@@ -9,12 +9,12 @@ This Python script automates the process of cracking WiFi passwords using a comb
 
 - Automated WiFi password cracking process.
 - User-friendly prompts and instructions.
-- Supports autocompletion for file paths.
-- Customizable banner with developer name and tool name.
+
 
 ## Prerequisites
 
 - This script requires Python 3.x.
+- Connect The External WIFI adapter
 - Ensure that the necessary WiFi hacking tools (`airmon-ng`, `airodump-ng`, `aireplay-ng`, `aircrack-ng`) are installed on your system.
 - **Note:** Make sure to run the script as root for full functionality.
 
@@ -24,5 +24,5 @@ This Python script automates the process of cracking WiFi passwords using a comb
 
 ```bash
 git clone https://github.com/Ankit1927/wificrack.git
-python3 wificrack.py
+python3 wificrack.py (run this command in sudo mode)
 
