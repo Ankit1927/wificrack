@@ -27,6 +27,7 @@ def print_banner():
                                                                                                                                                                                            
                         Developed by: Ankit Singh
                         Tool Name: WiFi Cracker
+                        Version : 0.1.2
 {Color.END}""")
 
 print_banner()
