@@ -16,6 +16,7 @@ This Python script automates the process of cracking WiFi passwords using a comb
 - This script requires Python 3.x.
 - Connect The External WIFI adapter
 - Ensure that the necessary WiFi hacking tools (`airmon-ng`, `airodump-ng`, `aireplay-ng`, `aircrack-ng`) are installed on your system.
+- Download a wordlist file. In kali or parrot there is a wordlist file already present in this location `/usr/share/wordlists/rockyou.txt` 
 - **Note:** Make sure to run the script as root for full functionality.
 
 ## Usage
