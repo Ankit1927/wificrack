@@ -25,10 +25,8 @@ def print_banner():
      \/  \/   |_____|_|    |_____|  \_____|_|  \_\/_/    \_\_____|_|\
                                                                      _\
                                                                                                                                                                                            
-                                                                                                                      
-                                 
-                             Developed by: Ankit Singh
-                             Tool Name: WiFi Cracker
+                        Developed by: Ankit Singh
+                        Tool Name: WiFi Cracker
 {Color.END}""")
 
 print_banner()
