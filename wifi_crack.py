@@ -82,9 +82,5 @@ print_banner()
 print(f"{Color.BOLD}{Color.CYAN}Giving the result{Color.END}")
 wordlist = input(f"{Color.BOLD}Enter full path of wordlist (press Tab for autocomplete): {Color.END}")
 
-# Autocompletion for file path
-readline.set_completer_delims('\t')
-readline.parse_and_bind("tab: complete")
-
 execute_command(f"aircrack-ng --bssid {bssid} wlan0 -w {wordlist} hand_shake*.cap")
 
