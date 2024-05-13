@@ -48,6 +48,11 @@ back to other opened tab and see if WPA HANDSHAKE is being captured or not if ye
 
 it can take some time to found the correct Passsowrd.
 
+After exit from Script run command...
+
+`sudo airmon-ng check kill`
+`sudo service NetworkManager restart`
+
 
 Tested in only Parrot/Kali linux systems till now. 
 
