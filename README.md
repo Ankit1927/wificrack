@@ -51,6 +51,7 @@ it can take some time to found the correct Passsowrd.
 After exit from Script run command...
 
 `sudo airmon-ng check kill`
+
 `sudo service NetworkManager restart`
 
 
