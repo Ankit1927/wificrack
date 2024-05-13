@@ -49,4 +49,7 @@ back to other opened tab and see if WPA HANDSHAKE is being captured or not if ye
 it can take some time to found the correct Passsowrd.
 
 
+Tested in only Parrot/Kali linux systems till now. 
+
+
 
